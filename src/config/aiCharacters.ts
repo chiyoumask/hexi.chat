@@ -3,22 +3,22 @@ export const modelConfigs = [
   {
     model: "Qwen/QwQ-32B-Preview",
     apiKey: "DASHSCOPE_API_KEY", // 这里存储环境变量的 key 名称
-    baseURL: "https://api.siliconflow.cn/v1"
+    baseURL: "https://api.siliconflow.cn"
   },
   {
     model: "deepseek-ai/DeepSeek-V3",
     apiKey: "ARK_API_KEY",
-    baseURL: "https://api.siliconflow.cn/v1"
+    baseURL: "https://api.siliconflow.cn"
   },
   {
     model: "meta-llama/Llama-3.3-70B-Instruct",
     apiKey: "HUNYUAN_API_KEY1",
-    baseURL: "https://api.siliconflow.cn/v1"
+    baseURL: "https://api.siliconflow.cn"
   },
   {
     model: "kimi-latest",//豆包模型|火山引擎接入点（改成自己的）
     apiKey: "Moonshot_API_KEY",
-    baseURL: "https://api.moonshot.cn/v1/"
+    baseURL: "https://api.moonshot.cn"
   },
   {
     model: "Sao10K/L3-8B-Stheno-v3.2",//deepseekv火山引擎接入点（改成自己的）
