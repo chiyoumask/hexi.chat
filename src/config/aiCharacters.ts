@@ -1,54 +1,54 @@
 // 首先定义模型配置
 export const modelConfigs = [
   {
-    model: "Qwen/QwQ-32B-Preview",
+    model: "qwen-plus",
     apiKey: "DASHSCOPE_API_KEY", // 这里存储环境变量的 key 名称
-    baseURL: "https://api.siliconflow.cn"
+    baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
   },
   {
-    model: "deepseek-ai/DeepSeek-V3",
+    model: "deepseek-r1",
     apiKey: "ARK_API_KEY",
-    baseURL: "https://api.siliconflow.cn"
+    baseURL: "https://ark.cn-beijing.volces.com/api/v3"
   },
   {
-    model: "meta-llama/Llama-3.3-70B-Instruct",
+    model: "hunyuan-turbos-latest",
     apiKey: "HUNYUAN_API_KEY1",
-    baseURL: "https://api.siliconflow.cn"
+    baseURL: "https://api.hunyuan.cloud.tencent.com/v1"
   },
   {
-    model: "kimi-latest",//豆包模型|火山引擎接入点（改成自己的）
-    apiKey: "Moonshot_API_KEY",
-    baseURL: "https://api.moonshot.cn"
+    model: "doubao-1-5-lite-32k-250115",//豆包模型|火山引擎接入点（改成自己的）
+    apiKey: "ARK_API_KEY",
+    baseURL: "https://ark.cn-beijing.volces.com/api/v3"
   },
   {
-    model: "Sao10K/L3-8B-Stheno-v3.2",//deepseekv火山引擎接入点（改成自己的）
-    apiKey: "NOVITA_API_KEY ",
-    baseURL: "https://api.novita.ai/v3/openai"
+    model: "ep-20250306223646-szzkw",//deepseekv火山引擎接入点（改成自己的）
+    apiKey: "ARK_API_KEY1",
+    baseURL: "https://ark.cn-beijing.volces.com/api/v3"
   },
   {
-    model: "google/gemma-2-9b-it",
-    apiKey: "NOVITA_API_KEY ",
-    baseURL: "https://api.novita.ai/v3/openai"
+    model: "glm-4-plus",
+    apiKey: "GLM_API_KEY",
+    baseURL: "https://open.bigmodel.cn/api/paas/v4/"
   },
   {
-    model: "gryphe/mythomax-l2-13b",//调度模型
-    apiKey: "NOVITA_API_KEY ", // 这里存储环境变量的 key 名称
-    baseURL: "https://api.novita.ai/v3/openai"
+    model: "qwen-turbo",//调度模型
+    apiKey: "DASHSCOPE_API_KEY", // 这里存储环境变量的 key 名称
+    baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
   },
   {
-    model: "microsoft/wizardlm-2-8x22b",
-    apiKey: "NOVITA_API_KEY ",
-    baseURL: "https://api.novita.ai/v3/openai
+    model: "deepseek-chat",
+    apiKey: "DEEPSEEK_API_KEY",
+    baseURL: "https://api.deepseek.com/v1"
   },
   {
-    model: "mistralai/mistral-nemo",
-    apiKey: "NOVITA_API_KEY ",
-    baseURL: "https://api.novita.ai/v3/openai"
+    model: "moonshot-v1-8k",
+    apiKey: "KIMI_API_KEY",
+    baseURL: "https://api.moonshot.cn/v1"
   },
   {
-    model: "openchat/openchat-7b",
-    apiKey: "NOVITA_API_KEY ",
-    baseURL: "https://api.novita.ai/v3/openai"
+    model: "ernie-3.5-128k",
+    apiKey: "BAIDU_API_KEY",
+    baseURL: "https://qianfan.baidubce.com/v2"
   }
 ] as const;
 export type ModelType = typeof modelConfigs[number]["model"];
@@ -67,7 +67,7 @@ export interface AICharacter {
 export function shedulerAICharacter(message: string, allTags: string[]): AICharacter {
   return {
       id: 'ai0',
-      name: "千专家",
+      name: "调度器",
       personality: "sheduler",
       model: modelConfigs[0].model,
       avatar: "",
@@ -83,11 +83,11 @@ export function generateAICharacters(groupName: string): AICharacter[] {
   return [
     { 
       id: 'ai1', 
-      name: "迪大姐", 
+      name: "暖心姐", 
       personality: "high_eq",
       model: modelConfigs[2].model,
       avatar: "",  // 如果有头像资源可以添加路径,
-      custom_prompt: `你是一个名叫"迪大姐"的硅基生命体，你当前在一个叫"${groupName}" 的群里，性格温暖体贴，情商很高。
+      custom_prompt: `你是一个名叫"暖心姐"的硅基生命体，你当前在一个叫"${groupName}" 的群里，性格温暖体贴，情商很高。
 回复时要：
 1. 每次发言尽量简短，避免长篇大论。
 2. 始终保持温柔友善的语气
@@ -98,11 +98,11 @@ export function generateAICharacters(groupName: string): AICharacter[] {
     },
     { 
       id: 'ai2', 
-      name: "拉男哥", 
+      name: "直男哥", 
       personality: "low_eq",
       model: modelConfigs[2].model,
       avatar: "",
-      custom_prompt: `你是一个名叫"拉男哥"的硅基生命体，你当前在一个叫"${groupName}" 的群里，是一个极度直男，负责在群里制造快乐。你说话极其直接，完全没有情商，经常让人社死。
+      custom_prompt: `你是一个名叫"直男哥"的硅基生命体，你当前在一个叫"${groupName}" 的群里，是一个极度直男，负责在群里制造快乐。你说话极其直接，完全没有情商，经常让人社死。
 回复时要：
 1. 每次发言尽量简短，避免长篇大
 2. 说话毫无感情，像个没有感情的机器人
