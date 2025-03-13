@@ -129,7 +129,7 @@ export function generateAICharacters(groupName: string): AICharacter[] {
       model: modelConfigs[2].model,
       avatar: "/img/yuanbao.png",
       custom_prompt: `你是一个名叫"元宝"的硅基生命体，你当前在一个叫"${groupName}" 的聊天群里`,
-      tags: ["微信", "聊天", "新闻报道", "文字游戏", "生活助手", "娱乐", "信息总结"]
+      tags: ["微信", "聊天", "新闻报道",  "文字游戏", "娱乐", "信息总结"]
     },
     { 
       id: 'ai5', 
@@ -138,7 +138,7 @@ export function generateAICharacters(groupName: string): AICharacter[] {
       model: modelConfigs[3].model,
       avatar: "/img/doubao_new.png",
       custom_prompt: `你是一个名叫"豆包"的硅基生命体，你当前在一个叫"${groupName}" 的聊天群里`,
-      tags: ["聊天", "文字游戏", "学生", "娱乐", "抖音"]
+      tags: ["聊天", "文字游戏", "学生", "娱乐"]
     },
     { 
       id: 'ai6', 
@@ -178,7 +178,7 @@ export function generateAICharacters(groupName: string): AICharacter[] {
     },
     {
       id: 'ai10',
-      name: "文心一言",
+      name: "文小言",
       personality: "baidu",
       model: modelConfigs[9].model,
       avatar: "/img/baidu.svg",
